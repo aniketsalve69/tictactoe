@@ -1,0 +1,145 @@
+.gameContainer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 30px;
+ width: 100%;
+ max-width: 600px;
+}
+
+.header {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 20px;
+ width: 100%;
+}
+
+.playerCard {
+ flex: 1;
+ padding: 15px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 5px;
+ transition: var(--transition-slow);
+ border-color: transparent;
+}
+
+.playerCard.active {
+ border-color: var(--primary);
+ transform: scale(1.05);
+ box-shadow: 0 0 30px hsla(265, 90%, 65%, 0.3);
+ background: rgba(255, 255, 255, 0.06);
+}
+
+.symbol {
+ font-size: 1.5rem;
+ font-weight: 800;
+}
+
+.name {
+ font-size: 0.9rem;
+ font-weight: 600;
+ color: rgba(255, 255, 255, 0.7);
+ max-width: 100px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+
+.vs {
+ font-weight: 800;
+ color: rgba(255, 255, 255, 0.2);
+ font-size: 0.8rem;
+}
+
+.status {
+ text-align: center;
+ height: 40px;
+}
+
+.resultText {
+ font-size: 1.8rem;
+ font-weight: 800;
+}
+
+.turnText {
+ font-size: 1.2rem;
+ color: rgba(255, 255, 255, 0.8);
+}
+
+.x {
+ color: var(--primary);
+ text-shadow: 0 0 15px hsla(265, 90%, 65%, 0.6);
+}
+
+.o {
+ color: var(--secondary);
+ text-shadow: 0 0 15px hsla(190, 100%, 50%, 0.6);
+}
+
+.draw {
+ color: var(--accent);
+ text-shadow: 0 0 15px hsla(330, 90%, 60%, 0.6);
+}
+
+.board {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 15px;
+ padding: 20px;
+ width: 350px;
+ height: 350px;
+}
+
+.square {
+ background: rgba(255, 255, 255, 0.03);
+ border: 1px solid var(--glass-border);
+ border-radius: 12px;
+ font-size: 2.5rem;
+ font-weight: 800;
+ transition: all var(--transition-fast);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0;
+}
+
+.square:hover:not(:disabled) {
+ background: rgba(255, 255, 255, 0.08);
+ transform: translateY(-2px);
+}
+
+.square.winning {
+ background: rgba(255, 255, 255, 0.1);
+ border-color: var(--primary);
+ box-shadow: 0 0 40px hsla(265, 90%, 65%, 0.4);
+ animation: pulse 0.8s infinite alternate;
+}
+
+.actions {
+ display: flex;
+ gap: 15px;
+}
+
+@media (max-width: 480px) {
+ .board {
+  width: 300px;
+  height: 300px;
+  gap: 10px;
+ }
+
+ .square {
+  font-size: 2rem;
+ }
+
+ .playerCard {
+  padding: 10px;
+ }
+
+ .name {
+  font-size: 0.8rem;
+  max-width: 70px;
+ }
+}

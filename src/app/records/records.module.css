@@ -1,0 +1,89 @@
+.container {
+ padding: 40px;
+ width: 100%;
+ max-width: 800px;
+ min-height: 400px;
+}
+
+.header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 30px;
+}
+
+.title {
+ font-size: 2rem;
+ font-weight: 800;
+}
+
+.titleSpan {
+ color: var(--primary);
+}
+
+.empty {
+ text-align: center;
+ padding: 60px 0;
+ color: rgba(255, 255, 255, 0.5);
+}
+
+.hint {
+ font-size: 0.9rem;
+ margin-top: 5px;
+}
+
+.tableWrapper {
+ overflow-x: auto;
+ border-radius: 12px;
+ border: 1px solid var(--glass-border);
+}
+
+.table {
+ width: 100%;
+ border-collapse: collapse;
+ text-align: left;
+}
+
+.th {
+ background: rgba(255, 255, 255, 0.05);
+ padding: 15px;
+ font-size: 0.85rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ color: var(--secondary);
+}
+
+.td {
+ padding: 15px;
+ border-top: 1px solid var(--glass-border);
+ font-size: 0.95rem;
+}
+
+.players {
+ font-weight: 600;
+ color: rgba(255, 255, 255, 0.9);
+}
+
+.winner {
+ color: var(--primary);
+ font-weight: 700;
+ text-shadow: 0 0 10px hsla(265, 90%, 65%, 0.5);
+}
+
+.draw {
+ color: var(--accent);
+ font-weight: 700;
+}
+
+@media (max-width: 600px) {
+ .container {
+  padding: 20px;
+  max-width: 95%;
+ }
+
+ .td,
+ .th {
+  padding: 10px;
+  font-size: 0.8rem;
+ }
+}
